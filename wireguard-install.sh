@@ -95,6 +95,7 @@ install_iproute() {
 			export DEBIAN_FRONTEND=noninteractive
 			(
 				set -x
+                                apt-get update --allow-releaseinfo-change
 				apt-get -yqq update || apt-get -yqq update
 				apt-get -yqq install iproute2 >/dev/null
 			) || exiterr2
